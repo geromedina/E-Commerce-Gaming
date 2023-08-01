@@ -10,7 +10,8 @@ const authCtrol = new Auth();
 
 export function LoginForm() {
     const router = useRouter();
-    console.log(useAuth());
+    const { login } = useAuth();
+    // console.log(useAuth());
 
     const formik = useFormik({
         initialValues: initialValues(),
@@ -19,7 +20,7 @@ export function LoginForm() {
         onSubmit: async (formValue) => {
             try {
                 const response = await authCtrol.login(formValue);
-                console.log(response);
+                login(response.jwt);
                 // router.push("/");
             } catch (error) {
                 console.error(error);

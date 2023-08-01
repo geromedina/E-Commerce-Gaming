@@ -46,22 +46,30 @@ export function RegisterForm() {
             </Form.Group>
             <Form.Group widths="equal">
                 <Form.Input
-                    name="name"
+                    name="firstname"
                     type="text"
-                    placeholder="Nombre y apellidos"
-                    value={formik.values.name}
+                    placeholder="Nombre"
+                    value={formik.values.firstname}
                     onChange={formik.handleChange}
-                    error={formik.errors.name}
+                    error={formik.errors.firstname}
                 />
                 <Form.Input
-                    name="password"
-                    type="password"
-                    placeholder="Contraseña"
-                    value={formik.values.password}
+                    name="lastname"
+                    type="text"
+                    placeholder="Apellido"
+                    value={formik.values.lastname}
                     onChange={formik.handleChange}
-                    error={formik.errors.password}
+                    error={formik.errors.lastname}
                 />
             </Form.Group>
+            <Form.Input
+                name="password"
+                type="password"
+                placeholder="Contraseña"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                error={formik.errors.password}
+            />
             <Form.Button type="submit" fluid loading={formik.isSubmitting}>
                 Registrarse
             </Form.Button>
